@@ -17,8 +17,7 @@ class String
   end
 
   def count_sentences
-    # self.strip.split(/\w[?!.]/).length
-    self.split(/[.!?]/).map{|x| !(x.match(/\w+/).nil?)}.reject{|x| x == false}.size 
+    self.scan(/[^\.!?]+[\.!?]/).map(&:strip).count
   end
 
 end
